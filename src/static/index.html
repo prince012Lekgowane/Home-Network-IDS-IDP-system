@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Network IDS/IDP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Home Network IDS/IDP with AI</h1>
+            <p>Real-time AI-powered threat monitoring • Local Ollama Analysis</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Alerts</h3>
+                <div id="total-alerts">0</div>
+            </div>
+            <div class="stat-card critical">
+                <h3>Critical</h3>
+                <div id="critical-count">0</div>
+            </div>
+            <div class="stat-card high">
+                <h3>High</h3>
+                <div id="high-count">0</div>
+            </div>
+            <div class="stat-card medium">
+                <h3>Medium</h3>
+                <div id="medium-count">0</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Live Alerts</h2>
+            <button id="test-alert">Generate Test Alert</button>
+            <button id="clear-alerts">Clear All</button>
+        </div>
+
+        <div class="alerts-container">
+            <table id="alerts-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Severity</th>
+                        <th>IP Address</th>
+                        <th>Port</th>
+                        <th>Threat Type</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="alerts-body">
+                    <!-- Filled by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="actions">
+            <h2>Quick Actions</h2>
+            <button onclick="discoverNetwork()">Discover Network</button>
+            <button onclick="blockSample()">Block Sample IP</button>
+            <button class="danger" onclick="alert('Counter-attack requested — review target first!')">Request Counter Attack</button>
+        </div>
+
+        <footer>
+            <p>Running locally • No data sent externally • Ollama + FastAPI</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
